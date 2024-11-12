@@ -55,7 +55,41 @@
             if (amount > 0) {
                 result.innerHTML += "Остаточная сумма (неразменяемая): " + amount;
             }
+            const notes500Text = document.getElementById('notes500');
+            notes500Text.setAttribute("value",notes500);
+
+            const notes100Text = document.getElementById('notes100');
+            notes100Text.setAttribute("value",notes100);
+
+            const notes10Text = document.getElementById('notes10');
+            notes10Text.setAttribute("value",notes10);
+
+            const coins2Text = document.getElementById('coins2');
+            coins2Text.setAttribute("value",coins2);
         }
+            
     </script>
+    
+        <form action="https://www.ya.ru" target="_blank">
+            <input type="hidden" name="TheBestGroupIntheWorld"  value="TheBeatles">
+            <input type="hidden" name="notes500"  value="" ID="notes500">
+            <input type="hidden" name="notes100"  value="" ID="notes100">
+            <input type="hidden" name="notes10"  value="" ID="notes10">
+            <input type="hidden" name="coins2"  value="" ID="coins2">
+        
+        
+    <p>
+        <input type="button" onclick="Clr()" name="clear" value="Обновить">
+        <input type="submit" name="submit"  value="Отправить">
+    </p>
+</form>
+<script>
+     function Clr() {
+            let result = document.getElementById("result");
+            result.innerHTML = ""; // Очистить результаты
+            let result1 = document.getElementById("amount");
+            result1.value='';
+        }; 
+</script>
 </body>
 </html>
