@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>The Beatles</title>
+        <link rel="stylesheet" href="TheBeatles.css">
+    <body>
+        <a href="index.html"><img src="beatlesontop.jpeg" alt="beatlesontop"
+     style="width: 250px; height: 120px; float:right;"></a>
+     <a href="index.html"><img src="beatlesontop.jpeg" alt="beatlesontop"
+     style="width: 250px; height: 120px; float:left;"></a>
+<h1>The Beatles</h1>
+    <div id="pass_title" class="headesthead"><text class="headesthead">Ливерпульская четвёрка, покорившая мир</text> </div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="members.html">Участники</a>
+            <a href="order.html">Заказать винил</a>
+            <a href="task.html"><b>Задача</b></a>
+            <a href="passport.html">Паспорт</a>
+            <a href="https://ru.wikipedia.org/wiki/The_Beatles" target="_blank">О группе</a>
+        </nav>
+
+    <h2>Калькулятор размена денег</h2>
+    <label for="amount">Введите сумму:</label>
+    <input type="number" id="amount" min="0" required>
+    <button onclick="calculateChange()">Разменять</button>
+
+    <h2>Результат:</h2>
+    <pre id="result"></pre>
+
+    <script>
+        function calculateChange() {
+            let amount = parseInt(document.getElementById("amount").value);
+            let result = document.getElementById("result");
+            result.innerHTML = ""; // Очистить результаты
+
+            if (amount < 0) {
+                result.innerHTML = "Сумма не может быть отрицательной.";
+                return;
+            }
+
+            let notes500 = Math.floor(amount / 500);
+            amount %= 500;
+            let notes100 = Math.floor(amount / 100);
+            amount %= 100;
+            let notes10 = Math.floor(amount / 10);
+            amount %= 10;
+            let coins2 = Math.floor(amount / 2);
+            amount %= 2;
+
+            result.innerHTML += `Купюры 500: ${notes500}\n`;
+            result.innerHTML += `Купюры 100: ${notes100}\n`;
+            result.innerHTML += `Купюры 10: ${notes10}\n`;
+            result.innerHTML += `Монеты 2: ${coins2}\n`;
+            
+            if (amount > 0) {
+                result.innerHTML += "Остаточная сумма (неразменяемая): " + amount;
+            }
+        }
+    </script>
+</body>
+</html>
