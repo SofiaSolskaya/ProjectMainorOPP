@@ -1,1 +1,1 @@
-https://sofiasolskaya.github.io/ProjectMainorOPP/task.html
+https://sofiasolskaya.github.io/ProjectMainorOPP/index.html
